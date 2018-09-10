@@ -37,7 +37,7 @@ class FormFilter extends OsmoseFilter
                 }
                 else
                 {
-                    $partition = explode("|", $elements);
+                    $partition = explode(",", $elements);
 
                     if(count($partition) > 1)
                     {

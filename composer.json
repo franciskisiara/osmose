@@ -1,6 +1,6 @@
 {
     "name": "kisiara/osmose",
-    "description": "An elegant way to filter data sets from eloquent models for simplistic presentation",
+    "description": "Elegant filtering for laravel's eloquent models",
     "authors": [
         {
             "name": "kisiara",
