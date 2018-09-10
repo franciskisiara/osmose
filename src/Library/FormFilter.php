@@ -13,14 +13,8 @@ class FormFilter extends OsmoseFilter
     /**
      * @var array|boolean $dates determines the input name for dates
      */
-//    protected $dates = [
-//        "start-date", "end-date"
-//    ];
-
-    protected $dates = false;
-
-    protected $residue = [
-
+    protected $dates = [
+        "start-date", "end-date"
     ];
 
     /**
@@ -63,12 +57,4 @@ class FormFilter extends OsmoseFilter
 
         return $builder;
     }
-
-    /*
-     * Return the date filters
-     */
-//    public function dates()
-//    {
-//        return session("filters")["date"];
-//    }
 }
