@@ -13,7 +13,10 @@
         "laravel": {
             "providers": [
                 "Kisiara\\Osmose\\Providers\\OsmoseServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Residue": "Kisiara\\Osmose\\Library\\Services\\Facades\\Residue"
+            }
         }
     }
 }

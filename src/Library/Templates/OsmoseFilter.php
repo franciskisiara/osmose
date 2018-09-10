@@ -23,4 +23,19 @@ class OsmoseFilter
             "date" => $filteredDates
         ], request()->except($exceptions));
     }
+
+    /*
+     * Return the intital builder given the date parameters
+     */
+    public function getBuilder($model, $dates)
+    {
+        $builder = $model::query();
+
+        if(!empty($dates))
+        {
+            $builder = $builder->whereBetween("created_at", $dates);
+        }
+
+        return $builder;
+    }
 }

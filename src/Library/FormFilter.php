@@ -1,6 +1,8 @@
 <?php
 namespace Kisiara\Osmose\Library;
 
+use Kisiara\Osmose\Library\Services\Facades\Residue;
+use Kisiara\Osmose\Library\Services\Sift;
 use Kisiara\Osmose\Library\Templates\OsmoseFilter;
 
 class FormFilter extends OsmoseFilter
@@ -25,36 +27,8 @@ class FormFilter extends OsmoseFilter
     {
         $filters = $this->getFilters($this->limit, $this->dates);
 
-        $builder = $this->dates ? $model::whereBetween("created_at", $filters["date"]) : $model::query();
-
-        foreach($this->residue as $filter => $elements)
-        {
-            if(isset($filters[$filter]) and $filters[$filter])
-            {
-                if(is_callable($elements))
-                {
-                    $builder = $elements($filters[$filter], $builder);
-                }
-                else
-                {
-                    $partition = explode(",", $elements);
-
-                    if(count($partition) > 1)
-                    {
-                        $builder = $builder->whereHas($partition[1], function($query) use($partition, $filters, $filter){
-
-                            $query->where($partition[0], $filters[$filter]);
-
-                        });
-                    }
-                    else
-                    {
-                        $builder = $builder->where($partition[0], $filters[$filter]);
-                    }
-                }
-            }
-        }
-
-        return $builder;
+        return Residue::aggregate(
+            $this->getBuilder($model, $filters["date"]), $filters
+        )->sift($this->residue());
     }
 }
