@@ -1,0 +1,20 @@
+<?php
+
+namespace DummyNamespace;
+
+use Kisiara\Osmose\Library\FormFilter;
+use Kisiara\Osmose\Library\FilterInterface;
+
+class DummyClass extends FormFilter implements FilterInterface
+{
+    /**
+     * Defines form elements and sieve values
+     * @return array
+     */
+    public function residue()
+    {
+        return [
+
+        ];
+    }
+}

@@ -3,7 +3,7 @@
 namespace Kisiara\Osmose\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Kisiara\Osmose\Console\MakeFilter;
+use Kisiara\Osmose\Console\Commands\MakeFilter;
 
 class OsmoseServiceProvider extends ServiceProvider
 {
@@ -38,10 +38,10 @@ class OsmoseServiceProvider extends ServiceProvider
      */
     public function registerCommands()
     {
-//        if ($this->app->runningInConsole()) {
-//            $this->commands([
-//                MakeFilter::class,
-//            ]);
-//        }
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                MakeFilter::class,
+            ]);
+        }
     }
 }
