@@ -1,0 +1,19 @@
+{
+    "name": "kisiara/osmose",
+    "description": "An elegant way to filter data sets from eloquent models for simplistic presentation",
+    "authors": [
+        {
+            "name": "kisiara",
+            "email": "franciskisiara@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kisiara\\Osmose\\Providers\\OsmoseServiceProvider"
+            ]
+        }
+    }
+}
