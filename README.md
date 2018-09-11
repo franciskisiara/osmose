@@ -6,7 +6,7 @@ An elegant way to filter data sets from eloquent models for simplistic presentat
 Osmose can be pulled in using composer by running the command
 
 ```
-composer require kisiara/osmose
+composer require agog/osmose
 ```
 
 ## Usage
@@ -31,8 +31,8 @@ filtered
 
 namespace App\Http\Filters;
 
-use Kisiara\Osmose\Library\FormFilter;
-use Kisiara\Osmose\Library\FilterInterface;
+use Agog\Osmose\Library\FormFilter;
+use Agog\Osmose\Library\FilterInterface;
 
 class DummyFilter extends FormFilter implements FilterInterface
 {
