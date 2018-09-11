@@ -10,6 +10,11 @@
     "minimum-stability": "beta",
     "require": {},
     "version": "0.1.0",
+    "autoload": {
+        "psr-4": {
+            "Agog\\Osmose\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
