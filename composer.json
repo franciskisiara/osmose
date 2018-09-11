@@ -7,7 +7,8 @@
             "email": "fkisiara@agog.co.ke"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "require": {},
     "version": "0.1.0",
     "extra": {
