@@ -1,5 +1,5 @@
 <?php
-namespace Kisiara\Osmose\Library\Services;
+namespace Agog\Osmose\Library\Services;
 
 trait MeshTrait
 {

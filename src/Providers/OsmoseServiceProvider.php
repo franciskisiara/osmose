@@ -1,10 +1,10 @@
 <?php
 
-namespace Kisiara\Osmose\Providers;
+namespace Agog\Osmose\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Kisiara\Osmose\Console\Commands\MakeFilter;
-use Kisiara\Osmose\Library\Services\Sift;
+use Agog\Osmose\Console\Commands\MakeFilter;
+use Agog\Osmose\Library\Services\Sift;
 
 class OsmoseServiceProvider extends ServiceProvider
 {
@@ -29,7 +29,7 @@ class OsmoseServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('Kisiara\Osmose\Library\Services\Sift', function() {
+        $this->app->bind('Agog\Osmose\Library\Services\Sift', function() {
             return new Sift();
         });
     }

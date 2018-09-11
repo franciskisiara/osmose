@@ -1,21 +1,22 @@
 {
-    "name": "kisiara/osmose",
+    "name": "agog/osmose",
     "description": "Elegant filtering for laravel's eloquent models",
     "authors": [
         {
-            "name": "kisiara",
-            "email": "franciskisiara@gmail.com"
+            "name": "Francis Kisiara",
+            "email": "fkisiara@agog.co.ke"
         }
     ],
     "minimum-stability": "dev",
     "require": {},
+    "version": "0.1.0",
     "extra": {
         "laravel": {
             "providers": [
-                "Kisiara\\Osmose\\Providers\\OsmoseServiceProvider"
+                "Agog\\Osmose\\Providers\\OsmoseServiceProvider"
             ],
             "aliases": {
-                "Residue": "Kisiara\\Osmose\\Library\\Services\\Facades\\Residue"
+                "Residue": "Agog\\Osmose\\Library\\Services\\Facades\\Residue"
             }
         }
     }

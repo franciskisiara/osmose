@@ -1,9 +1,8 @@
 <?php
-namespace Kisiara\Osmose\Library;
+namespace Agog\Osmose\Library;
 
-use Kisiara\Osmose\Library\Services\Facades\Residue;
-use Kisiara\Osmose\Library\Services\Sift;
-use Kisiara\Osmose\Library\Templates\OsmoseFilter;
+use Agog\Osmose\Library\Services\Facades\Residue;
+use Agog\Osmose\Library\Templates\OsmoseFilter;
 
 class FormFilter extends OsmoseFilter
 {

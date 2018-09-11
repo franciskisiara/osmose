@@ -1,5 +1,5 @@
 <?php
-namespace Kisiara\Osmose\Library\Templates;
+namespace Agog\Osmose\Library\Templates;
 
 class OsmoseFilter
 {

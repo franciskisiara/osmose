@@ -1,6 +1,6 @@
 <?php
 
-namespace Kisiara\Osmose\Console\Commands;
+namespace Agog\Osmose\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 

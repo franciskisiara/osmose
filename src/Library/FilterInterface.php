@@ -1,5 +1,5 @@
 <?php
-namespace Kisiara\Osmose\Library;
+namespace Agog\Osmose\Library;
 
 interface FilterInterface
 {
