@@ -7,9 +7,9 @@
             "email": "fkisiara@agog.co.ke"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {},
-    "version": "1.0.0",
+    "version": "0.1.0",
     "extra": {
         "laravel": {
             "providers": [
