@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 return [
 
     /*
@@ -7,15 +9,15 @@ return [
      */
     "limits" => [
         "d" => [
-            now()->startOfDay(), now()->endOfDay()
+            Carbon::now()->startOfDay(), Carbon::now()->endOfDay()
         ],
 
         "w" => [
-            now()->startOfWeek(), now()->endOfWeek()
+            Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()
         ],
 
         "m" => [
-            now()->startOfMonth(), now()->endOfMonth()
+            Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()
         ]
     ]
 
