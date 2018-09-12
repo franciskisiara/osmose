@@ -12,7 +12,7 @@ class OsmoseFilter
 
         $filteredDates = [];
 
-        if($dates)
+        if(is_array($dates))
         {
             $filteredDates = (new DateFilter($limit, $dates))->filtered();
 

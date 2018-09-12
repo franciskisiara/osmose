@@ -21,7 +21,7 @@ class DateFilter
      */
     public function filtered()
     {
-        $defaults = config("osmose.limits")[ $this->limit];
+        $defaults = config("osmose.limits")[$this->limit];
 
         foreach($this->dates as $index => $date)
         {
