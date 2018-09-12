@@ -4,17 +4,22 @@
     "authors": [
         {
             "name": "Francis Kisiara",
-            "email": "fkisiara@agog.co.ke"
+            "email": "kisiarafrancis@gmail.com",
+            "homepage": "https://franciskisiara.com",
+            "role": "Developer"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {
-
-    },
+    "minimum-stability": "dev",
+    "require": {},
     "version": "0.1.0",
     "autoload": {
         "psr-4": {
             "Agog\\Osmose\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Agog\\Osmose\\Test": "tests/"
         }
     },
     "extra": {
