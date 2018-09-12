@@ -2,8 +2,8 @@
 
 namespace DummyNamespace;
 
-use Kisiara\Osmose\Library\FormFilter;
-use Kisiara\Osmose\Library\FilterInterface;
+use Agog\Osmose\Library\FormFilter;
+use Agog\Osmose\Library\FilterInterface;
 
 class DummyClass extends FormFilter implements FilterInterface
 {
