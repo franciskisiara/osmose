@@ -109,8 +109,3 @@ Consider the data sets;
 ## License
 
 This project is licensed under the DBAD License - see [DBAD Public License](https://dbad-license.org/)
-
-## Acknowledgments
-
-* Hat tip to bosses and peers
-* Inspired by laziness
