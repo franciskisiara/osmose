@@ -99,13 +99,8 @@ Consider the data sets;
 | X Force        | 2           |
 
 
-
 ## Built With
 
 * [Laravel](https://laravel.com/docs/5.6/packages/) - The framework used
 * [Coffee](https://www.google.com/search?q=cofee) - The stimulus used
 * [Kisiara](https://github.com/franciskisiara/) - The labourer used
-
-## License
-
-This project is licensed under the DBAD License - see [DBAD Public License](https://dbad-license.org/)

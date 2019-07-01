@@ -18,7 +18,7 @@ class MakeFilter extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = "Generate an osmose filter object";
+    protected $description = "Generate an osmose filter object";   
 
     /**
      * Get the stub file for the generator.

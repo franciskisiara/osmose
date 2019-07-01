@@ -11,7 +11,7 @@ class DummyClass extends FormFilter implements FilterInterface
      * Defines form elements and sieve values
      * @return array
      */
-    public function residue()
+    public function residue () : array
     {
         return [
 
