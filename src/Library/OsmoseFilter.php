@@ -25,33 +25,44 @@ class OsmoseFilter
     {
         // $filters = $this->getFilters($this->limit, $this->dates);
 
-        $filters = $this->getFilters();
+        $filters = $this->initialiseOsmoseFilter();
 
         // return Residue::aggregate(
         //     $this->getBuilder($model, $filters["date"]), $filters
         // )->sift($this->residue());
     }
 
-    //  /*
-    //  * Return the filters as are set in the form submitting the request
-    //  */
-    // public function getFilters($limit, $dates)
-    // {
-    //     $exceptions = ["_token"];
+    /*
+     * Initilaise the filter method that will be used to get the eloqeunt collection
+     */
+    public function initialiseOsmoseFilter ()
+    {
 
-    //     $filteredDates = [];
+    }
 
-    //     if(is_array($dates))
-    //     {
-    //         $filteredDates = (new DateFilter($limit, $dates))->filtered();
 
-    //         $exceptions = ["_token"] + $dates;
-    //     }
 
-    //     return array_merge([
-    //         "date" => $filteredDates
-    //     ], request()->except($exceptions));
-    // }
+
+     /*
+     * Return the filters as are set in the form submitting the request
+     */
+    public function getFilters($limit, $dates)
+    {
+        $exceptions = ["_token"];
+
+        $filteredDates = [];
+
+        if(is_array($dates))
+        {
+            $filteredDates = (new DateFilter($limit, $dates))->filtered();
+
+            $exceptions = ["_token"] + $dates;
+        }
+
+        return array_merge([
+            "date" => $filteredDates
+        ], request()->except($exceptions));
+    }
 
     // /*
     //  * Return the intital builder given the date parameters
