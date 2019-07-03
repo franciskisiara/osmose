@@ -19,7 +19,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Agog\\Osmose\\Tests": "tests/"
+            "Agog\\Osmose\\Tests\\": "tests/"
         }
     },
     "extra": {
