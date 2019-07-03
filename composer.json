@@ -1,6 +1,12 @@
 {
     "name": "agog/osmose",
     "description": "Elegant filtering for laravel's eloquent models",
+    "keywords": [
+        "eloquent",
+        "laravel",
+        "filter"
+    ],
+    "license": "MIT",
     "authors": [
         {
             "name": "Francis Kisiara",
