@@ -4,7 +4,7 @@ namespace Agog\Osmose\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Agog\Osmose\Console\Commands\MakeFilter;
-use Agog\Osmose\Library\Services\Sift;
+use Agog\Osmose\Library\Services\OsmoseFilterService;
 
 class OsmoseServiceProvider extends ServiceProvider
 {
