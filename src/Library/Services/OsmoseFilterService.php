@@ -31,47 +31,12 @@ class OsmoseFilterService
     {
         foreach ($filters as $filter => $rule)
         {
-            $driver = $this->getOsmoseDriver($rule);
+            $driver = $this->getOsmoseDriver($filter, $rule);
 
-            $this->builder = $driver->filtrate($this->builder, $filter, $rule);
+            $this->builder = $driver->filtrate($this->builder);
         }
 
         return $this->builder;
 
     }
-
-    // use MeshTrait;
-
-    // protected $builder, $filters;
-
-    // protected $callbacks = [
-    //     "meshColumn", "meshColumnWithRelationship", "meshCallback"
-    // ];
-
-    // /*
-    //  * Sifts an entry that has a callback passed
-    //  */
-    // public function sift($residue)
-    // {
-    //     foreach($residue as $key => $element)
-    //     {
-    //         foreach($this->callbacks as $callback)
-    //         {
-    //             if(isset($this->filters[$key]))
-    //                 $this->mesh($key, trim($element, ","), $callback);
-    //         }
-    //     }
-
-    //     return $this->builder;
-    // }
-
-    // /*
-    //  * Aggregated the items to be sifted with their respective filters
-    //  */
-    // public function aggregate($builder, $filters)
-    // {
-    //     $this->builder = $builder;
-    //     $this->filters = $filters;
-    //     return $this;
-    // }
 }

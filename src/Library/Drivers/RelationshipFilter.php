@@ -5,5 +5,8 @@ use Agog\Osmose\Library\Services\Contracts\OsmoseDriverInterface;
 
 class RelationshipFilter implements OsmoseDriverInterface
 {
-    
+    public function filtrate ($builder)
+    {
+        
+    }
 }

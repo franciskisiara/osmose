@@ -6,5 +6,5 @@ interface OsmoseDriverInterface
     /*
      * The filtrate method performs necessary filtration processes
      */
-    public function filtrate ($builder, $filter, $rule);
+    public function filtrate ($builder);
 }

@@ -9,23 +9,23 @@ trait OsmoseDriverTrait
     /*
      * Get the osmose driver to execute filtration
      */
-    public function getOsmoseDriver ($rule)
+    public function getOsmoseDriver ($filter, $rule)
     {
         if (is_callable($rule)) {
 
-            return new \Agog\Osmose\Library\Drivers\CallbackFilter;
+            return new \Agog\Osmose\Library\Drivers\CallbackFilter($filter, $rule);
 
         } 
         
         if (Str::startsWith($rule, 'column')) {
 
-            return new \Agog\Osmose\Library\Drivers\DirectFilter;
+            return new \Agog\Osmose\Library\Drivers\DirectFilter($filter, $rule);
 
         }
 
         if (Str::startsWith($rule, 'relationship')) {
 
-            return new \Agog\Osmose\Library\Drivers\RelationshipFilter;
+            return new \Agog\Osmose\Library\Drivers\RelationshipFilter($filter, $rule);
             
         }
 
