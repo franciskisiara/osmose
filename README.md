@@ -1,4 +1,4 @@
-# Osmose Eloquent Filter
+# Osmose Eloquent Filter [![Latest Stable Version](https://poser.pugx.org/agog/osmose/v/stable)](https://packagist.org/packages/agog/osmose) [![License](https://poser.pugx.org/agog/osmose/license)](https://packagist.org/packages/agog/osmose) [![Total Downloads](https://poser.pugx.org/agog/osmose/downloads)](https://packagist.org/packages/agog/osmose)
 
 An elegant way to filter data sets from eloquent models for simplistic presentation
 
@@ -99,13 +99,8 @@ Consider the data sets;
 | X Force        | 2           |
 
 
-
 ## Built With
 
 * [Laravel](https://laravel.com/docs/5.6/packages/) - The framework used
 * [Coffee](https://www.google.com/search?q=cofee) - The stimulus used
 * [Kisiara](https://github.com/franciskisiara/) - The labourer used
-
-## License
-
-This project is licensed under the DBAD License - see [DBAD Public License](https://dbad-license.org/)

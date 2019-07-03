@@ -3,10 +3,10 @@ namespace Agog\Osmose\Library\Services\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Residue extends Facade
+class Osmose extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return "Agog\Osmose\Library\Services\Sift";
+        return "Agog\Osmose\Library\Services\OsmoseFilterService";
     }
 }

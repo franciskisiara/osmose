@@ -29,8 +29,8 @@ class OsmoseServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('Agog\Osmose\Library\Services\Sift', function() {
-            return new Sift();
+        $this->app->bind('Agog\Osmose\Library\Services\OsmoseFilterService', function() {
+            return new OsmoseFilterService();
         });
     }
 

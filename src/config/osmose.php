@@ -18,6 +18,10 @@ return [
 
         "m" => [
             Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()
+        ],
+
+        "y" => [
+            Carbon::now()->startOfYear(), Carbon::now()->endOfYear()
         ]
     ]
 
