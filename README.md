@@ -57,11 +57,9 @@ Rules are defined as key => value pairs with the key representing the parameter 
 
 Rules are defined based on the type of filter driver intended. Osmose presents three internal filter drivers 
 
-<code>
-1. Agog\Osmose\Library\Drivers\DirectFilter <br>
-2. Agog\Osmose\Library\Drivers\CallbackFilter <br>
-3. Agog\Osmose\Library\Drivers\RelationshipFilter <br>
-</code>
+    1. Agog\Osmose\Library\Drivers\DirectFilter <br>
+    2. Agog\Osmose\Library\Drivers\CallbackFilter <br>
+    3. Agog\Osmose\Library\Drivers\RelationshipFilter <br>
 
 In our business logic, we call Osmose's sieve method on the filter object and pass the eloquent class that we intend to filter
 The sieve method will return Eloquent's builder.
@@ -79,6 +77,7 @@ public function index (CharacterFilter $filter)
 Consider the following tables and their related eloquent models
 
 `Character.php` <br>
+
 | id   | name        | gender  |
 |------|-------------|---------|
 | 1    | Baraka      | male    |
@@ -90,6 +89,7 @@ Consider the following tables and their related eloquent models
 ----------
 
 `Role.php` <br>
+
 | id   | name        |
 |------|-------------|
 | 1    | hero        |
@@ -99,6 +99,7 @@ Consider the following tables and their related eloquent models
 ----------
 
 `CharacterRole.php` <br>
+
 | id   | character_id   | role_id | 
 |------|----------------|---------|
 | 1    | 1              | 2       |
@@ -125,7 +126,8 @@ public function residue ()
 
 Osmose will then look for the key 'character_id' within the request object and only return the result whose id matches the value passed
 
-<code>/characters?character_id=1</code> Will return the character record with an id of '1'
+<code>/characters?character_id=1</code> 
+Will return the character record with an id of '1'
 
 <hr>
 
@@ -145,7 +147,8 @@ public function residue ()
 
 Osmose will then look for the key 'role' within the request object and only return the result based on the rule definition
 
-<code>/characters?role=god</code> Will return all characters with the role of 'god'
+<code>/characters?role=god</code> 
+Will return all characters with the role of 'god'
 
 <hr>
 
@@ -168,7 +171,8 @@ public function residue ()
 
 Osmose will then look for the key 'gender' within the request object and only return results based on the callback
 
-<code>/characters?gender=male</code> Will return all male characters
+<code>/characters?gender=male</code> 
+Will return all male characters
 
 <hr>
 
