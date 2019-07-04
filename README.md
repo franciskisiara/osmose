@@ -4,22 +4,22 @@
 [![Total Downloads](https://poser.pugx.org/agog/osmose/downloads)](https://packagist.org/packages/agog/osmose)
 [![License](https://poser.pugx.org/agog/osmose/license)](https://packagist.org/packages/agog/osmose)
 
-An elegant way to filter your eloquent colelctions 
+An elegant way to filter your eloquent collections 
 
 ## Getting Started
-Osmose can be pulled in using composer by running the command
+To pull osmose in your project, use the command
 
 ```
 composer require agog/osmose
 ```
 
 ## Defining Osmose Filters
-To generate filters, run the make-filter artisan command provided by osmose, providing the name of the filter to be generated.
+Osmose provides an artisan command `make-filter` that accepts the name of the filter to be generated, which quickly scaffolds a filter class
 
 ```
 php artisan osmose:make-filter CharacterFilter
 ```
-This will generate the file <code>CharacterFilter.php</code> within the `App\Http\Filters` namespace.
+A <code>CharacterFilter.php</code> file will be created in the `App\Http\Filters` namespace.
 
 ***NB: The Filters folder will be automatically created if it does not exist.***
 
@@ -57,9 +57,9 @@ Rules are defined as key => value pairs with the key representing the parameter 
 
 Rules are defined based on the type of filter driver intended. Osmose presents three internal filter drivers 
 
-    1. Agog\Osmose\Library\Drivers\DirectFilter <br>
-    2. Agog\Osmose\Library\Drivers\CallbackFilter <br>
-    3. Agog\Osmose\Library\Drivers\RelationshipFilter <br>
+    1. Agog\Osmose\Library\Drivers\DirectFilter
+    2. Agog\Osmose\Library\Drivers\CallbackFilter
+    3. Agog\Osmose\Library\Drivers\RelationshipFilter
 
 In our business logic, we call Osmose's sieve method on the filter object and pass the eloquent class that we intend to filter
 The sieve method will return Eloquent's builder.
