@@ -178,7 +178,7 @@ Will return all male characters
 
 ## Feature Requests
 
-If you have any feature requests, security vulnerabilities or just a good ol' thumbs up, dont hesitate to drop me an [email](franciskisiara@gmail.com) 
+If you have any feature requests, security vulnerabilities or just a good ol' thumbs up, dont hesitate to drop an email at [franciskisiara@gmail.com](mailto:franciskisiara@gmail.com) 
 
 ## Inspiration
 
