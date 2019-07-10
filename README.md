@@ -176,6 +176,52 @@ Will return all male characters
 
 <hr>
 
+## Filtering Dates
+
+Starting from version 1.1.0, osmose includes a date filter that quickly lets you fetch records whose *created_at* timestamps fall between a certain date range.
+
+To use this feature, you must publish osmose's configuration file by running;
+
+```
+php artisan vendor:publish --provider="Agog\Osmose\Providers\OsmoseServiceProvider"
+```
+
+This will publish an <code>osmose.php</code> file in your app's config folder. 
+
+In this file, you will find a ranges array that defines keys and their carbon ranges - d (day), w (week), m (month), y (year) have already been defined :). You can define more ranges here as you deem fit.
+
+In order to filter using these ranges, osmose expects a <code>range</code> parameter in your url whose value is one of the ranges defined in the configuration file
+
+```
+characters?range=m
+```
+
+This will filter characters who were created between the beginning and end of the month.
+
+You can change the parameter name osmose expects you to give by overwriting the $range property in your filter class
+
+```php
+<?php
+
+namespace App\Http\Filters;
+
+use Agog\Osmose\Library\OsmoseFilter;
+use Agog\Osmose\Library\Services\Contracts\OsmoseFilterInterface;
+
+class CharacterFilter extends OsmoseFilter implements OsmoseFilterInterface
+{
+    protected $range = "dates";
+
+    ...
+}
+```
+
+By changing the $range property as shown above, our url will then be
+
+```
+characters?dates=m
+```
+
 ## Feature Requests
 
 If you have any feature requests, security vulnerabilities or just a good ol' thumbs up, dont hesitate to drop an email at [franciskisiara@gmail.com](mailto:franciskisiara@gmail.com) 

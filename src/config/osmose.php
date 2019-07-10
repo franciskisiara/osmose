@@ -5,7 +5,7 @@ use Carbon\Carbon;
 return [
 
     /*
-     * Sets the default carbon based dates
+     * Sets the default carbon based date ranges
      */
     "limits" => [
         "d" => [
