@@ -5,8 +5,6 @@ use Agog\Osmose\Library\Services\Facades\Osmose;
 
 class OsmoseFilter
 {
-    protected $range = "range";
-
     /**
      * @param string $model model class that ought to be sieved
      * @return array
@@ -15,6 +13,8 @@ class OsmoseFilter
     {
         $filters = $this->residue();
 
-        return Osmose::model($model)->range($this->range)->filter($filters);
+        $range = property_exists($this, 'range') ? $this->range : 'range';
+
+        return Osmose::model($model)->range($range)->filter($filters);
     }
 }
