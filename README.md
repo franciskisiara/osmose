@@ -193,7 +193,7 @@ In this file, you will find a ranges array that defines keys and their carbon ra
 In order to filter using these ranges, osmose expects a <code>range</code> parameter in your url whose value is one of the ranges defined in the configuration file
 
 ```
-characters?range=m
+/characters?range=m
 ```
 
 This will filter characters who were created between the beginning and end of the month.
@@ -219,7 +219,7 @@ class CharacterFilter extends OsmoseFilter implements OsmoseFilterInterface
 By changing the $range property as shown above, our url will then be
 
 ```
-characters?dates=m
+/characters?dates=m
 ```
 
 ## Feature Requests

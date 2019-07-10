@@ -7,7 +7,7 @@ return [
     /*
      * Sets the default carbon based date ranges
      */
-    "limits" => [
+    "ranges" => [
         "d" => [
             Carbon::now()->startOfDay(), Carbon::now()->endOfDay()
         ],
