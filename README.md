@@ -228,6 +228,10 @@ Version 1.2.0 introduces a global function, `osmose()`, that can automatically d
 
 *To use this feature, you must publish osmose's configuration file by running;*
 
+```
+php artisan vendor:publish --provider="Agog\Osmose\Providers\OsmoseServiceProvider"
+```
+
 To automatically detect models, the convention `${ModelName}Filter` should be followed when creating filters
 For example, a filter named **CharacterFilter** will look for and automatically load a model called **Character**.
 
