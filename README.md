@@ -222,6 +222,35 @@ By changing the $range property as shown above, our url will then be
 /characters?dates=m
 ```
 
+## The Global Osmose Function
+
+Version 1.2.0 introduces a global function, `osmose()`, that can automatically detect a model class from the filter. 
+
+To automatically detect models, the convention `${ModelName}Filter` should be followed when creating filters
+For example, a filter named **CharacterFilter** will look for and automatically load a model called **Character**.
+
+By default, osmose looks for models within the App namespace but this can be configured by changing the namespace's keyfrom within osmose's configuration file.
+
+The `osmose()` function receives the filter's fully qualified class name and an optional model name.
+
+It returns Eloquent's builder just like the sieve() method.
+
+```php
+public function index ()
+{
+    $characters = omsose(CharacterFilter::class)->get();
+}
+```
+
+if the model name completely differs from the filter or if there isn't a single namespace under which models reside. e.g in a micro service architecture, then you can pass the model's fully qualified name as a second argument to the osmose function.
+
+```php
+public function index ()
+{
+    $characters = omsose(UserSieve::class, Character::class)->get();
+}
+```
+
 ## Feature Requests
 
 If you have any feature requests, security vulnerabilities or just a good ol' thumbs up, dont hesitate to drop an email at [franciskisiara@gmail.com](mailto:franciskisiara@gmail.com) 
