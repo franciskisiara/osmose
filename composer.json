@@ -22,7 +22,10 @@
     "autoload": {
         "psr-4": {
             "Agog\\Osmose\\": "src/"
-        }
+        },
+        "files": [
+            "src/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

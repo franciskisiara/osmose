@@ -11,7 +11,8 @@ class OsmoseFilterService
 
     /**
      * Set the eloquent model that is to be filtered
-     * @param $model 
+     *
+     * @param $model
      */
     public function model ($model)
     {
@@ -25,6 +26,7 @@ class OsmoseFilterService
     /**
      * Set the range of values that are to be filtered against
      * Supports the created_at column on the table to be filtered
+     *
      * @param $range
      */
     public function range ($range)
@@ -44,6 +46,7 @@ class OsmoseFilterService
     /**
      * Performs the base filtration process to determine
      * the filterable driver that ought to be executed
+     *
      * @param $filters
      */
     public function filter ($filters)
