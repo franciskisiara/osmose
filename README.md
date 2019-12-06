@@ -180,7 +180,7 @@ Will return all male characters
 
 Starting from version 1.1.0, osmose includes a date filter that quickly lets you fetch records whose *created_at* timestamps fall between a certain date range.
 
-To use this feature, you must publish osmose's configuration file by running;
+*To use this feature, you must publish osmose's configuration file by running;*
 
 ```
 php artisan vendor:publish --provider="Agog\Osmose\Providers\OsmoseServiceProvider"
@@ -226,6 +226,8 @@ By changing the $range property as shown above, our url will then be
 
 Version 1.2.0 introduces a global function, `osmose()`, that can automatically detect a model class from the filter. 
 
+*To use this feature, you must publish osmose's configuration file by running;*
+
 To automatically detect models, the convention `${ModelName}Filter` should be followed when creating filters
 For example, a filter named **CharacterFilter** will look for and automatically load a model called **Character**.
 
@@ -238,7 +240,7 @@ It returns Eloquent's builder just like the sieve() method.
 ```php
 public function index ()
 {
-    $characters = omsose(CharacterFilter::class)->get();
+    $characters = osmose(CharacterFilter::class)->get();
 }
 ```
 
@@ -247,7 +249,7 @@ if the model name completely differs from the filter or if there isn't a single 
 ```php
 public function index ()
 {
-    $characters = omsose(UserSieve::class, Character::class)->get();
+    $characters = osmose(UserSieve::class, Character::class)->get();
 }
 ```
 
