@@ -32,6 +32,8 @@ class OsmoseServiceProvider extends ServiceProvider
         $this->app->bind('Agog\Osmose\Library\Services\OsmoseFilterService', function() {
             return new OsmoseFilterService();
         });
+
+        // $this->mergeConfigFrom( __DIR__ . '/../config/osmose.php', 'osmose');
     }
 
     /*

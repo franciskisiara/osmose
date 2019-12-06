@@ -23,6 +23,13 @@ return [
         "y" => [
             Carbon::now()->startOfYear(), Carbon::now()->endOfYear()
         ]
-    ]
+    ],
+
+    /**
+     * For automatically loading of eloquent models using the
+     * osmose function, please specify the namespace under
+     * which your application models have been defined
+     */
+    "namespace" => "App"
 
 ];
