@@ -1,3 +1,4 @@
+dist: bionic
 language: php
 
 sudo: true
@@ -10,3 +11,6 @@ install:
   - travis_retry composer self-update
   - travis_retry composer clear-cache
   - composer create-project --prefer-dist laravel/laravel
+
+script:
+  - vendor/bin/phpunit --verbose
