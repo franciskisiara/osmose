@@ -1,14 +1,15 @@
-dist: bionic
 language: php
-
-sudo: true
 
 php:
   - 7.3
 
 before_script:
   - composer self-update
-  - composer install --prefer-source --no-interaction --dev
+  - composer install --no-interaction
 
 script:
-  - ./vendor/bin/phpunit --verbose
+  - vendor/bin/phpunit
+
+cache:
+  directories:
+    - vendor
