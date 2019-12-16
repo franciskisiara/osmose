@@ -6,10 +6,9 @@ sudo: true
 php:
   - 7.3
 
-install:
-  - travis_retry composer self-update
-  - travis_retry composer clear-cache
-  - composer create-project --prefer-dist laravel/laravel
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
 
 script:
   - ./vendor/bin/phpunit --verbose
