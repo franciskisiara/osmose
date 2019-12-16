@@ -4,7 +4,6 @@ language: php
 sudo: true
 
 php:
-  - 7.2
   - 7.3
 
 install:
@@ -13,4 +12,4 @@ install:
   - composer create-project --prefer-dist laravel/laravel
 
 script:
-  - vendor/bin/phpunit --verbose
+  - ./vendor/bin/phpunit --verbose
