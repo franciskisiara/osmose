@@ -1,8 +1,8 @@
 # Osmose Eloquent Filter 
 
+[![Build Status](https://travis-ci.org/franciskisiara/osmose.svg?branch=master)](https://travis-ci.org/franciskisiara/osmose)
 [![Latest Stable Version](https://poser.pugx.org/agog/osmose/v/stable)](https://packagist.org/packages/agog/osmose)
 [![Total Downloads](https://poser.pugx.org/agog/osmose/downloads)](https://packagist.org/packages/agog/osmose)
-[![Build Status](https://travis-ci.org/franciskisiara/osmose.svg?branch=master)](https://travis-ci.org/franciskisiara/osmose)
 [![License](https://poser.pugx.org/agog/osmose/license)](https://packagist.org/packages/agog/osmose)
 
 An elegant way to filter your eloquent collections 
