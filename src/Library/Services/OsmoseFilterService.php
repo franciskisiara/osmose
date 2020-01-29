@@ -1,11 +1,12 @@
 <?php
 namespace Agog\Osmose\Library\Services;
 
+use Agog\Osmose\Library\Services\Traits\OsmoseDatesTrait;
 use Agog\Osmose\Library\Services\Traits\OsmoseDriverTrait;
 
 class OsmoseFilterService
 {
-    use OsmoseDriverTrait;
+    use OsmoseDriverTrait, OsmoseDatesTrait;
 
     protected $model, $builder;
 
@@ -27,17 +28,19 @@ class OsmoseFilterService
      * Set the range of values that are to be filtered against
      * Supports the created_at column on the table to be filtered
      *
+     * @param $column
      * @param $range
+     * @param $limits
      */
-    public function range ($range)
+    public function timeline ($column, $range, $limits)
     {
-        if (request()->has($range))
-        {
-            $timespan = config("osmose.ranges.".request($range));
+        $timespan = request()->has($range)
+            ? $this->rangeTimespan($range)
+            : $this->limitTimespan($limits);
 
-            $this->builder = $this->builder->whereBetween(
-                'created_at', $timespan
-            );
+        if (is_array($timespan))
+        {
+            $this->builder = $this->builder->whereBetween($column, $timespan);
         }
 
         return $this;
