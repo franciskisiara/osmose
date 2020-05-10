@@ -16,7 +16,9 @@ trait OsmoseDatesTrait
 
     public function limitTimespan ($limits)
     {
-        $fromDate = Carbon::parse(request($limits['from']));
+        $fromDate = request($limits['from'])
+            ? Carbon::parse(request($limits['from']))
+            : null;
 
         $toDate = request($limits['to']) ?? now();
 

@@ -3,6 +3,7 @@ namespace Agog\Osmose\Library\Services;
 
 use Agog\Osmose\Library\Services\Traits\OsmoseDatesTrait;
 use Agog\Osmose\Library\Services\Traits\OsmoseDriverTrait;
+use Illuminate\Support\Facades\DB;
 
 class OsmoseFilterService
 {

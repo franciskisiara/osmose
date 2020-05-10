@@ -179,9 +179,46 @@ Will return all male characters
 
 ## Filtering Dates
 
-Starting from version 1.1.0, osmose includes a date filter that quickly lets you fetch records whose *created_at* timestamps fall between a certain date range.
+As of version 2.0.0, osmose has introduced three new methods to assist in date filtering. These methods are;
+
+```php
+public function column () : string
+{
+    return 'created_at';
+}
+
+public function range ()
+{
+    return 'range';
+}
+
+public function limits () : array
+{
+    return [
+        'from'  => 'from',
+        'to'    => 'to'
+    ];
+}
+```
+
+## The column() method
+
+The `column()` method returns a string indicating the column to be filtered once the sieve method on the filter class is executed. It defaults to the `created_at` column. Simply override the method in your filter class, returning your desired column.
+
+## The range() method
 
 *To use this feature, you must publish osmose's configuration file by running;*
+
+This method replaces the `range` property that was available in previous versions. It has a similar API, in which it returns the query parameter to be examined against, given predefined ranges within osmose's configuration file. Override the method to return an appropriate range string.
+
+If the defined range does not exist within the <code>GET</code> parameters, then osmose will not execute the range functionality.
+
+## The limits() method
+
+The limits method refines date filtering within osmose by allowing one to configure request options. This methods returns an array with two keys `from` and `to` which indicate the request parameters. 
+
+<!-- Starting from version 1.1.0, osmose includes a date filter that quickly lets you fetch records whose *created_at* timestamps fall between a certain date range.
+
 
 ```
 php artisan vendor:publish --provider="Agog\Osmose\Providers\OsmoseServiceProvider"
@@ -221,7 +258,7 @@ By changing the $range property as shown above, our url will then be
 
 ```
 /characters?dates=m
-```
+``` -->
 
 ## The Global Osmose Function
 

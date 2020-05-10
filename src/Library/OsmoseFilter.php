@@ -5,7 +5,7 @@ use Agog\Osmose\Library\Services\Facades\Osmose;
 
 class OsmoseFilter extends DateFilter
 {
-        /**
+    /**
      * Return the column name to be filtered
      *
      * @return string
