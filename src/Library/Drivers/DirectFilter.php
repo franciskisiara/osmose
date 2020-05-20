@@ -11,12 +11,24 @@ class DirectFilter extends OsmoseDriver implements OsmoseDriverInterface
      */
     public function filtrate ($builder)
     {
-        if ($filter = request()->get($this->filter)) {
+        if ($this->rule)
+        {
+            if ($filter = request()->get($this->filter))
+            {
+                $column = explode(":", $this->rule)[1];
 
-            $column = explode(":", $this->rule)[1];
+                return $builder->where($column, $filter);
+            }
+            else
+            {
+                $details = explode(',', substr($this->rule, strpos($this->rule, ":") + 1));
 
-            return $builder->where($column, $filter);
+                $column = $details[0];
 
+                array_splice($details, 0, 1);
+
+                return $builder->whereIn($column, $details);
+            }
         }
 
         return $builder;

@@ -1,0 +1,31 @@
+<?php
+
+namespace DummyNamespace;
+
+use Agog\Osmose\Library\OsmoseFilter;
+use Agog\Osmose\Library\Services\Contracts\OsmoseFilterInterface;
+
+class DummyClass extends OsmoseFilter implements OsmoseFilterInterface
+{
+    /**
+     * Defines compulsory filter rules
+     * @return array
+     */
+    public function bound () :array
+    {
+        return [
+
+        ];
+    }
+
+    /**
+     * Defines form elements and sieve values
+     * @return array
+     */
+    public function residue () :array
+    {
+        return [
+
+        ];
+    }
+}

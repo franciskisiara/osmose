@@ -45,6 +45,7 @@ class OsmoseFilter extends DateFilter
     public function sieve ($model)
     {
         $filters = $this->residue();
+        $binds = method_exists($this, 'bound') ? $this->bound() : [];
 
         return Osmose::model($model)
             ->timeline(
@@ -52,6 +53,7 @@ class OsmoseFilter extends DateFilter
                 $this->range(),
                 $this->limits()
             )
+            ->bound($binds)
             ->filter($filters);
     }
 }

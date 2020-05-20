@@ -11,14 +11,14 @@ class MakeFilter extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = "osmose:make-filter {name : The name of the filter class}";
+    protected $signature = "osmose:make-filter {name : The name of the filter class} {--b|bound : Generate filter class with bound method}";
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = "Generate an osmose filter object";   
+    protected $description = "Generate an osmose filter object";
 
     /**
      * Get the stub file for the generator.
@@ -27,7 +27,9 @@ class MakeFilter extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'/../Stubs/filter.stub';
+        return $this->option('bound')
+            ? __DIR__.'/../Stubs/bound.stub'
+            : __DIR__.'/../Stubs/filter.stub';
     }
     /**
      * Get the console command arguments.
