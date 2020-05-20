@@ -7,5 +7,5 @@ interface OsmoseFilterInterface
      * Obligates that a mandatory residue method exists
      */
     public function residue () : array;
-    
+
 }
