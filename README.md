@@ -217,48 +217,29 @@ If the defined range does not exist within the <code>GET</code> parameters, then
 
 The limits method refines date filtering within osmose by allowing one to configure request options. This methods returns an array with two keys `from` and `to` which indicate the request parameters. 
 
-<!-- Starting from version 1.1.0, osmose includes a date filter that quickly lets you fetch records whose *created_at* timestamps fall between a certain date range.
+## The bound() method
 
+Version 2.0.0 of osmose introduces the `bound()` method. This method, like the residue method returns an array of rule definitions. Rules defined in this method are *ALWAYS* executed and do not rely on a query parameter being passed in the url. As such, these rules are not defined as key => pair values but simply as values defined in the array. 
 
-```
-php artisan vendor:publish --provider="Agog\Osmose\Providers\OsmoseServiceProvider"
-```
+***NB: Only the direct filter and callback filters are currently supported.***
 
-This will publish an <code>osmose.php</code> file in your app's config folder. 
-
-In this file, you will find a ranges array that defines keys and their carbon ranges - d (day), w (week), m (month), y (year) have already been defined :). You can define more ranges here as you deem fit.
-
-In order to filter using these ranges, osmose expects a <code>range</code> parameter in your url whose value is one of the ranges defined in the configuration file
-
-```
-/characters?range=m
-```
-
-This will filter characters who were created between the beginning and end of the month.
-
-You can change the parameter name osmose expects you to give by overwriting the $range property in your filter class
+Values in the `bound()` method must be explicitly passed when defining the rules. Therefore, the CallbackFilter driver takes only one argument i.e the query builder.
 
 ```php
-<?php
-
-namespace App\Http\Filters;
-
-use Agog\Osmose\Library\OsmoseFilter;
-use Agog\Osmose\Library\Services\Contracts\OsmoseFilterInterface;
-
-class CharacterFilter extends OsmoseFilter implements OsmoseFilterInterface
+public function bound () : array
 {
-    protected $range = "dates";
-
-    ...
+    return [
+        'column:id,1,2,3,4', // will always return records with the IDs defined whenever the route is visited,
+        function ($query) {
+            return $query->orWhere('id', 5); // adds record where id=5
+        }
+    ];
 }
 ```
 
-By changing the $range property as shown above, our url will then be
+You can automatically create the bound method by passing the bound optin when creating an osmose filter.
 
-```
-/characters?dates=m
-``` -->
+`php artisan osmose:make-filter ExampleFilter --bound` or `php artisan osmose:make-filter ExampleFilter -b`
 
 ## The Global Osmose Function
 

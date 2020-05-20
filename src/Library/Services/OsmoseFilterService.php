@@ -86,6 +86,5 @@ class OsmoseFilterService
         }
 
         return $this->builder;
-
     }
 }
