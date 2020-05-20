@@ -219,9 +219,9 @@ The limits method refines date filtering within osmose by allowing one to config
 
 ## The bound() method
 
-Version 2.0.0 of osmose introduces the `bound()` method. This method, like the residue method returns an array of rule definitions. Rules defined in this method are *ALWAYS* executed and do not rely on a query parameter being passed in the url. As such, these rules are not defined as key => pair values but simply as values defined in the array. 
+Version 2.0.0 of osmose introduces the `bound()` method. This method, like the residue method returns an array of rule definitions. Rules defined in this method are *ALWAYS* executed and do not rely on a query parameter being passed in the url. As such, these rules are not defined as key => value pairs but simply as values in the array.
 
-***NB: Only the direct filter and callback filters are currently supported.***
+***NB: Only the direct and callback filters are currently supported.***
 
 Values in the `bound()` method must be explicitly passed when defining the rules. Therefore, the CallbackFilter driver takes only one argument i.e the query builder.
 
@@ -237,7 +237,7 @@ public function bound () : array
 }
 ```
 
-You can automatically create the bound method by passing the bound optin when creating an osmose filter.
+You can automatically create the bound method by passing the bound option when creating an osmose filter.
 
 `php artisan osmose:make-filter ExampleFilter --bound` or `php artisan osmose:make-filter ExampleFilter -b`
 
