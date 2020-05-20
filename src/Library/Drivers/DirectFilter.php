@@ -13,7 +13,9 @@ class DirectFilter extends OsmoseDriver implements OsmoseDriverInterface
     {
         if ($this->rule)
         {
-            if ($filter = request()->get($this->filter))
+            $filter = $this->filter ? request()->get($this->filter) : null;
+
+            if ($filter)
             {
                 $column = explode(":", $this->rule)[1];
 
