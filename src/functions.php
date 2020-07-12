@@ -13,7 +13,9 @@ if (!function_exists('osmose'))
     {
         if (is_null($model))
         {
-            $namespace = trim(config('osmose.namespace'), "/");
+            $namespace = config('osmose.namespace');
+
+            $namespace = $namespace ? trim($namespace, "/") : "App";
 
             $filterName = substr($filter, strrpos($filter, "\\") + 1);
 
@@ -21,7 +23,6 @@ if (!function_exists('osmose'))
         }
 
         return (new $filter)->sieve($model);
-
     }
 }
 
