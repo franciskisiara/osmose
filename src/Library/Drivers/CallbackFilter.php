@@ -8,11 +8,11 @@ class CallbackFilter extends OsmoseDriver implements OsmoseDriverInterface
 {
     public function filtrate ($builder)
     {
-        if ($this->rule && $this->filter)
+        if ($this->rule)
         {
-            $filtrate = request()->get($this->filter);
+            $filter = $this->filter ? request()->get($this->filter) : null;
 
-            return call_user_func($this->rule, $builder, $filtrate);
+            return call_user_func($this->rule, $builder, $filter);
         }
 
         return $builder;
