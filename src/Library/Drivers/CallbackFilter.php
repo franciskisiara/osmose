@@ -10,9 +10,14 @@ class CallbackFilter extends OsmoseDriver implements OsmoseDriverInterface
     {
         if ($this->rule)
         {
+            $argsCount = (new \ReflectionFunction($this->rule))->getNumberOfParameters();
+
             $filter = $this->filter ? request()->get($this->filter) : null;
 
-            return call_user_func($this->rule, $builder, $filter);
+            if ($argsCount == 1 || ($argsCount == 2 && !is_null($filter)))
+            {
+                return call_user_func_array($this->rule, [$builder, $filter]);
+            }
         }
 
         return $builder;
