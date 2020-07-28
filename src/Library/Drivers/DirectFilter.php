@@ -23,13 +23,16 @@ class DirectFilter extends OsmoseDriver implements OsmoseDriverInterface
             }
             else
             {
-                $details = explode(',', substr($this->rule, strpos($this->rule, ":") + 1));
+                if (strpos($this->rule, ",")) 
+                {
+                    $details = explode(',', substr($this->rule, strpos($this->rule, ":") + 1));
+                    
+                    $column = $details[0];
 
-                $column = $details[0];
+                    array_splice($details, 0, 1);
 
-                array_splice($details, 0, 1);
-
-                return $builder->whereIn($column, $details);
+                    return $builder->whereIn($column, $details);
+                }
             }
         }
 
