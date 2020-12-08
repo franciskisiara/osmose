@@ -42,10 +42,10 @@ class CharacterFilter extends OsmoseFilter implements OsmoseFilterInterface
      * defines the form elements that are to be sieved
      * @return array
      */
-    public function residue()
+    public function residue() : array
     {
         return [
-
+            //
         ];
     }
 }
@@ -117,7 +117,7 @@ Consider the following tables and their related eloquent models
 To use the DirectFilter driver, we define the rule, prefixed with the word 'column'
 
 ```php
-public function residue ()
+public function residue () : array
 {
     return [
         'character_id' => 'column:id'
@@ -137,7 +137,7 @@ Will return the character record with an id of '1'
 To use the RelationshipFilter driver, we define the rule, prefixed with the word 'relationship', giving the name of the relationship and the column that should be checked in the related table
 
 ```php
-public function residue ()
+public function residue () : array
 {
     return [
         'role' => 'relationship:roles,name'
@@ -158,7 +158,7 @@ Will return all characters with the role of 'god'
 To use the CallbackFilter driver, we pass a callback that takes in the query builder and the value of the request as arguments. The callback must return the result of the builder
 
 ```php
-public function residue ()
+public function residue () : array
 {
     return [
         'gender' => function ($query, $value) {
