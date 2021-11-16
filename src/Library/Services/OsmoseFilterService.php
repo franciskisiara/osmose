@@ -33,12 +33,13 @@ class OsmoseFilterService
      * @param $column
      * @param $range
      * @param $limits
+     * @param $defaultLimit
      */
-    public function timeline ($column, $range, $limits)
+    public function timeline ($column, $range, $limits, $defaultLimit)
     {
         $timespan = request()->has($range)
             ? $this->rangeTimespan($range)
-            : $this->limitTimespan($limits);
+            : $this->limitTimespan($limits, $defaultLimit);
 
         if (is_array($timespan))
         {
