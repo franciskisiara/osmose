@@ -6,6 +6,14 @@ use Agog\Osmose\Library\Services\Facades\Osmose;
 class OsmoseFilter extends DateFilter
 {
     /**
+     * provide default time limit
+     * Accepted string values: 'd', 'm', 'w', 'y'
+     * 
+     * @param string $limit
+     */
+    protected $limit = null;
+    
+    /**
      * Return the column name to be filtered
      *
      * @return string
@@ -51,7 +59,8 @@ class OsmoseFilter extends DateFilter
             ->timeline(
                 $this->column(),
                 $this->range(),
-                $this->limits()
+                $this->limits(),
+                $this->limit
             )
             ->bound($binds)
             ->filter($filters);
