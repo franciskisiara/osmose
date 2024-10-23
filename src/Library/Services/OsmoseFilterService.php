@@ -55,8 +55,10 @@ class OsmoseFilterService
      * @param $column
      * @param $range
      * @param $limits
+     *
+     * @return self
      */
-    public function bound ($binds)
+    public function bound ($binds) : self
     {
         if(!is_array($binds)) { throw new Exception("Osmose's bound method should return an array"); }
 
@@ -74,9 +76,10 @@ class OsmoseFilterService
      * Performs the base filtration process to determine
      * the filterable driver that ought to be executed
      *
-     * @param $filters
+     * @param  array  $filters
+     * @return \Illuminate\Database\Eloquent\Builder;
      */
-    public function filter ($filters)
+    public function filter (array $filters) : \Illuminate\Database\Eloquent\Builder
     {
         foreach ($filters as $filter => $rule)
         {
