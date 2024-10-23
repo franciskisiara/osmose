@@ -40,9 +40,9 @@ class OsmoseFilter extends DateFilter
 
     /**
      * @param string $model model class that ought to be sieved
-     * @return array
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function sieve ($model)
+    public function sieve ($model): \Illuminate\Database\Eloquent\Builder
     {
         $filters = $this->residue();
         $binds = method_exists($this, 'bound') ? $this->bound() : [];

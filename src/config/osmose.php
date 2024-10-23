@@ -30,6 +30,6 @@ return [
      * osmose function, please specify the namespace under
      * which your application models have been defined
      */
-    "namespace" => "App"
+    "namespace" => "App\\Models"
 
 ];

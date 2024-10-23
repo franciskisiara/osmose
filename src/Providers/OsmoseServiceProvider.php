@@ -13,7 +13,7 @@ class OsmoseServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__ . '/../config/osmose.php' => config_path('osmose.php'),
@@ -27,19 +27,19 @@ class OsmoseServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->bind('Agog\Osmose\Library\Services\OsmoseFilterService', function() {
             return new OsmoseFilterService();
         });
-
-        // $this->mergeConfigFrom( __DIR__ . '/../config/osmose.php', 'osmose');
     }
 
-    /*
+    /**
      * Register console commands
+     *
+     * @return void
      */
-    public function registerCommands()
+    public function registerCommands(): void
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
