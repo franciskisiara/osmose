@@ -20,7 +20,7 @@ class OsmoseFilter extends DateFilter
      *
      * @return string
      */
-    public function range ()
+    public function range () : string
     {
         return 'range';
     }
@@ -39,10 +39,13 @@ class OsmoseFilter extends DateFilter
     }
 
     /**
-     * @param string $model model class that ought to be sieved
+     * Filters collection based on the rules specified by the Osmose Filter
+     *
+     * @param  string  $model  model class that ought to be sieved
      * @return \Illuminate\Database\Eloquent\Builder
+     * @throws \Exception
      */
-    public function sieve ($model): \Illuminate\Database\Eloquent\Builder
+    public function sieve (string $model): \Illuminate\Database\Eloquent\Builder
     {
         $filters = $this->residue();
         $binds = method_exists($this, 'bound') ? $this->bound() : [];
