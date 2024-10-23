@@ -3,13 +3,13 @@
 if (!function_exists('osmose'))
 {
     /**
-     * Sieves an eloquent model against a specified osmose filter
+     * Sieves an eloquent model against a specified osmose filter class
      *
      * @param  string  $filter
      * @param  \Illuminate\Database\Eloquent\Model  $model optional
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    function osmose ($filter, $model = null): \Illuminate\Database\Eloquent\Builder
+    function osmose (string $filter, $model = null): \Illuminate\Database\Eloquent\Builder
     {
         if (is_null($model))
         {
