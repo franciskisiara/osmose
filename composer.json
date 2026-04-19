@@ -19,7 +19,7 @@
     "minimum-stability": "dev",
     "require": {},
     "require-dev": {
-        "phpunit/phpunit": "^9.0@dev"
+        "phpunit/phpunit": "^12.5@dev"
     },
     "version": "3.0.0",
     "autoload": {
